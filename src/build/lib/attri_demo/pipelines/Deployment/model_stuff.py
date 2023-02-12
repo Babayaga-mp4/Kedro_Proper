@@ -15,7 +15,10 @@ logger = logging.getLogger()
 class_weights = {0:1, 1:15}
 
 
-def mlflow_logging(model,data, hyperparameters):
+def mlflow_logging(model, Hyperparameters, data):
+    # with mlflow.start_run(run_name = "Logistic Regression" ,nested = False):
+            mlflow.sklearn.autolog()
+            mlflow.set_tag("mlflow.runName" ,"Logistic Regression")
             mlflow.log_param('class_weights', class_weights)
             mlflow.log_metric("accuracy_score" ,data.iloc[0]['accuracy_value'])
             mlflow.log_metric("precision" ,data.iloc[0]['precision_score'])
@@ -26,11 +29,14 @@ def mlflow_logging(model,data, hyperparameters):
             mlflow.log_metric("mae" ,data.iloc[0]['mae'])
             mlflow.log_metric("balanced_accuracy_score" ,data.iloc[0]['balanced_acc'])
             mlflow.log_metric("recall_score" ,data.iloc[0]['recall'])
-            mlflow.sklearn.log_model(
-                sk_model = model,
-                artifact_path = "sklearn-model")
+
+            # mlflow.sklearn.log_model(
+            #     sk_model = model,
+            #     artifact_path = "sklearn-model")
 
             model_uri = "runs:/{}/sklearn-model".format(mlflow.active_run().info.run_id)
-            mlflow.register_model(model_uri ,"Fraud Detection-2")
+            mlflow.register_model(model_uri ,"Logistic Regression")
+            return model
+
 
           

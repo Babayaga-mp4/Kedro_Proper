@@ -7,10 +7,10 @@ def create_pipeline(**kwargs) -> Pipeline:
         [
 
             node(statistical_feature_engineering, inputs=["Pre-Processed Data"],
-                 outputs='Statistical_Features',name="Statistical_Feature_Engineering"),
+                 outputs='Statistical_Features',name="Statistical_Analysis"),
 
             node(SNA_feature_engineering ,inputs = ["Pre-Processed Data"] ,
-                 outputs = 'SNA_Features' ,name = "SNA_Feature_Engineering") ,
+                 outputs = 'SNA_Features' ,name = "Social_Network_Analysis") ,
 
             node(feature_selection ,inputs = ["SNA_Features", "Statistical_Features"] ,
                  outputs = 'selected_features' ,name = "Feature_Selection") ,

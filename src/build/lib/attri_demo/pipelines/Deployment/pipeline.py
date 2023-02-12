@@ -2,7 +2,6 @@ from kedro.pipeline import Pipeline, node
 from kedro.pipeline.modular_pipeline import pipeline
 from .model_stuff import *
 from .serving_node import serve_model
-from .nodes import load_dataset, collect_dataset, feature_engineering, data_viz
 
 def create_pipeline(**kwargs) -> Pipeline:
      return pipeline(
@@ -35,9 +34,9 @@ def create_pipeline(**kwargs) -> Pipeline:
             node(mlflow_logging,inputs=["Trained_Model", 'Hyperparameters', "Performance_of_the_Model"],
                  outputs='Logged_Model',name="Logging"),
 
-            node(serve_model,inputs="Logged_Model",outputs=None,name="Deployment")
+            node(serve_model,inputs="Logged_Model",outputs="Prediction",name="Deployment")
             ],
          namespace = "Deployment" ,
          inputs = {"Trained_Model", "Hyperparameters", "Performance_of_the_Model"} ,  # map inputs outside of namespace
-         outputs = None
+         outputs = "Prediction"
      )

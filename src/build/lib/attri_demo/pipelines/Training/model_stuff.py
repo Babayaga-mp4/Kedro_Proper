@@ -50,17 +50,19 @@ def train_test_split_the_data(data):
 
 class_weights = {0:1, 1:15}
 
-def train(X_train, y_train):
+def train(X_train, y_train, Hyperparameters):
+    mlflow.sklearn.autolog()
     lr = LogisticRegression(class_weight = class_weights ,random_state = 42)
     lr.fit(X_train ,y_train)
     create_engine("sqlite:///mlflow.db" ,pool_pre_ping = True)
     mlflow.set_registry_uri(
         "sqlite:///mlflow.db")
+    # mlflow.set_tracking_uri('sqlite:///mlflow.db') # Set in mlflow.yml
+    confusion_matrix ,precision_recall_curve ,roc_curve = [1,1,1] # dummy
+    return lr,confusion_matrix, precision_recall_curve, roc_curve
 
-    return lr, class_weights
 
-
-def eval_metrics(actual, raw_preds):
+def eval_metrics(actual, raw_preds) -> pd.DataFrame:
     pred = raw_preds.to_numpy()
     rmse = np.sqrt(mean_squared_error(actual, pred))
     mae = mean_absolute_error(actual, pred)
@@ -90,7 +92,8 @@ def prediction(lr, X_test):
     predicted_qualities = lr.predict(X_test)
     return pd.DataFrame(predicted_qualities ,columns = ['Predictions'])
 
-def mlflow_logging(model,data):
+def mlflow_logging(model, data):
+    with mlflow.start_run(run_name = "Logistic Regression" ,nested = True):
             mlflow.log_param('class_weights', class_weights)
             mlflow.log_metric("accuracy_score" ,data.iloc[0]['accuracy_value'])
             mlflow.log_metric("precision" ,data.iloc[0]['precision_score'])
@@ -101,11 +104,13 @@ def mlflow_logging(model,data):
             mlflow.log_metric("mae" ,data.iloc[0]['mae'])
             mlflow.log_metric("balanced_accuracy_score" ,data.iloc[0]['balanced_acc'])
             mlflow.log_metric("recall_score" ,data.iloc[0]['recall'])
+
             mlflow.sklearn.log_model(
                 sk_model = model,
                 artifact_path = "sklearn-model")
 
             model_uri = "runs:/{}/sklearn-model".format(mlflow.active_run().info.run_id)
-            mlflow.register_model(model_uri ,"Fraud Detection-2")
+            mlflow.register_model(model_uri ,"Churn Prediction")
+    return model
 
           
