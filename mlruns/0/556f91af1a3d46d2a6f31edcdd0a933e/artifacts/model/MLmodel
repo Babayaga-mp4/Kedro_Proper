@@ -1,0 +1,60 @@
+artifact_path: model
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.9.13
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.1.3
+mlflow_version: 2.0.1
+model_uuid: b8f80c4ec28e418a96d46c1702ac77c1
+run_id: 556f91af1a3d46d2a6f31edcdd0a933e
+signature:
+  inputs: '[{"name": "account_length", "type": "double"}, {"name": "number_vmail_messages",
+    "type": "double"}, {"name": "total_day_minutes", "type": "double"}, {"name": "total_day_calls",
+    "type": "double"}, {"name": "total_day_charge", "type": "double"}, {"name": "total_eve_minutes",
+    "type": "double"}, {"name": "total_eve_calls", "type": "double"}, {"name": "total_eve_charge",
+    "type": "double"}, {"name": "total_night_minutes", "type": "double"}, {"name":
+    "total_night_calls", "type": "double"}, {"name": "total_night_charge", "type":
+    "double"}, {"name": "total_intl_minutes", "type": "double"}, {"name": "total_intl_calls",
+    "type": "double"}, {"name": "total_intl_charge", "type": "double"}, {"name": "number_customer_service_calls",
+    "type": "double"}, {"name": "state_AK", "type": "double"}, {"name": "state_AL",
+    "type": "double"}, {"name": "state_AR", "type": "double"}, {"name": "state_AZ",
+    "type": "double"}, {"name": "state_CA", "type": "double"}, {"name": "state_CO",
+    "type": "double"}, {"name": "state_CT", "type": "double"}, {"name": "state_DC",
+    "type": "double"}, {"name": "state_DE", "type": "double"}, {"name": "state_FL",
+    "type": "double"}, {"name": "state_GA", "type": "double"}, {"name": "state_HI",
+    "type": "double"}, {"name": "state_IA", "type": "double"}, {"name": "state_ID",
+    "type": "double"}, {"name": "state_IL", "type": "double"}, {"name": "state_IN",
+    "type": "double"}, {"name": "state_KS", "type": "double"}, {"name": "state_KY",
+    "type": "double"}, {"name": "state_LA", "type": "double"}, {"name": "state_MA",
+    "type": "double"}, {"name": "state_MD", "type": "double"}, {"name": "state_ME",
+    "type": "double"}, {"name": "state_MI", "type": "double"}, {"name": "state_MN",
+    "type": "double"}, {"name": "state_MO", "type": "double"}, {"name": "state_MS",
+    "type": "double"}, {"name": "state_MT", "type": "double"}, {"name": "state_NC",
+    "type": "double"}, {"name": "state_ND", "type": "double"}, {"name": "state_NE",
+    "type": "double"}, {"name": "state_NH", "type": "double"}, {"name": "state_NJ",
+    "type": "double"}, {"name": "state_NM", "type": "double"}, {"name": "state_NV",
+    "type": "double"}, {"name": "state_NY", "type": "double"}, {"name": "state_OH",
+    "type": "double"}, {"name": "state_OK", "type": "double"}, {"name": "state_OR",
+    "type": "double"}, {"name": "state_PA", "type": "double"}, {"name": "state_RI",
+    "type": "double"}, {"name": "state_SC", "type": "double"}, {"name": "state_SD",
+    "type": "double"}, {"name": "state_TN", "type": "double"}, {"name": "state_TX",
+    "type": "double"}, {"name": "state_UT", "type": "double"}, {"name": "state_VA",
+    "type": "double"}, {"name": "state_VT", "type": "double"}, {"name": "state_WA",
+    "type": "double"}, {"name": "state_WI", "type": "double"}, {"name": "state_WV",
+    "type": "double"}, {"name": "state_WY", "type": "double"}, {"name": "area_code_area_code_408",
+    "type": "double"}, {"name": "area_code_area_code_415", "type": "double"}, {"name":
+    "area_code_area_code_510", "type": "double"}, {"name": "international_plan_no",
+    "type": "double"}, {"name": "international_plan_yes", "type": "double"}, {"name":
+    "voice_mail_plan_no", "type": "double"}, {"name": "voice_mail_plan_yes", "type":
+    "double"}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "int64", "shape": [-1]}}]'
+utc_time_created: '2023-01-31 08:40:14.134162'

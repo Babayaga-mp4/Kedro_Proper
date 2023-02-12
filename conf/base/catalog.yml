@@ -1,0 +1,154 @@
+# Here you can define all your data sets by using simple YAML syntax.
+#
+# Documentation for this file format can be found in "The Data Catalog"
+# Link: https://kedro.readthedocs.io/en/stable/data/data_catalog.html
+
+
+Network_Logs:
+    type: pandas.CSVDataSet
+    filepath: data/01_raw/train.csv
+    layer: Data Ingestion
+
+Customer_Data:
+
+  type: pandas.CSVDataSet
+  filepath: data/01_raw/train.csv
+  layer: Data Ingestion
+
+
+Other_Data_Sources:
+  type: pandas.CSVDataSet
+  filepath: data/01_raw/train.csv
+  layer: Data Ingestion
+
+Towers_and_Complaints:
+  type: pandas.CSVDataSet
+  filepath: data/01_raw/train.csv
+  layer: Data Ingestion
+
+CDRs:
+  type: pandas.CSVDataSet
+  filepath: data/01_raw/train.csv
+  layer: Data Ingestion
+
+IMEI_info:
+    type: pandas.CSVDataSet
+    filepath: data/01_raw/train.csv
+    layer: Data Ingestion
+
+raw_dataset:
+    type: pandas.CSVDataSet
+    filepath: data/01_raw/train.csv
+    layer: Data Ingestion
+
+created_dataset:
+    type: pandas.CSVDataSet
+    filepath: data/02_intermediate/train.csv
+    layer: Data Ingestion
+
+Pre-Processed Data:
+    type: pandas.CSVDataSet
+    filepath: data/03_primary/train.csv
+    layer: Data Pre Processing
+
+Statistical_Features:
+    type: pandas.CSVDataSet
+    filepath: data/04_primary/train.csv
+    layer: Feature Engineering
+
+SNA_Features:
+    type: pandas.CSVDataSet
+    filepath: data/04_primary/train.csv
+    layer: Feature Engineering
+
+selected_features:
+    type: pandas.CSVDataSet
+    filepath: data/04_primary/train.csv
+    layer: Feature Engineering
+
+dataset:
+    type: pandas.CSVDataSet
+    filepath: data/04_primary/train.csv
+    layer: Feature Engineering
+
+#project:
+#    type: pandas.CSVDataSet
+#    filepath: data/02_intermediate/train.csv
+#    layer: intermediate
+#
+#created_model:
+#    type: pandas.CSVDataSet
+#    filepath: data/02_intermediate/model_details.csv
+#    layer: intermediate
+#
+#UDMI:
+#    type: pandas.CSVDataSet
+#    filepath: data/02_intermediate/udmi.csv
+#    layer: intermediate
+
+X_Train:
+    type: pandas.CSVDataSet
+    filepath: data/05_model_input/train.csv
+    layer: Modeling
+
+y_Train:
+    type: pandas.CSVDataSet
+    filepath: data/05_model_input/train.csv
+    layer: Modeling
+
+X_Test:
+    type: pandas.CSVDataSet
+    filepath: data/05_model_input/train.csv
+    layer: Modeling
+
+y_Test:
+    type: pandas.CSVDataSet
+    filepath: data/05_model_input/train.csv
+    layer: Modeling
+
+Hyperparameters:
+    type: pandas.CSVDataSet
+    filepath: data/05_model_input/train.csv
+    layer: Modeling
+
+Trained_Model:
+#  type: kedro_mlflow.io.artifacts.MlflowArtifactDataSet
+#  data_set:
+    type: kedro_mlflow.io.models.MlflowModelSaverDataSet
+    flavor: mlflow.sklearn
+    filepath: data/06_models/best_model.pkl
+    layer: Modeling
+
+Performance_of_the_Model:
+    type: pandas.CSVDataSet
+    filepath: data/08_reporting/train.csv
+    layer: Modeling
+
+Prediction:
+  type: pandas.CSVDataSet
+  filepath: data/07_model_output/predictions.csv
+  layer: Logging
+
+served_predictions:
+  type: pandas.CSVDataSet
+  filepath: data/07_model_output/served_predictions.csv
+  layer: Logging
+
+
+confusion_matrix:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/07_model_output/training_confusion_matrix.png
+  save_args:
+    format: png
+
+precision_recall_curve:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/07_model_output/training_precision_recall_curve.png
+  save_args:
+    format: png
+
+roc_curve:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/07_model_output/training_roc_curve.png
+  save_args:
+    format: png

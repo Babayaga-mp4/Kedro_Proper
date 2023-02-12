@@ -1,0 +1,22 @@
+from string import ascii_letters
+import random
+import pandas as pd
+
+def load_dataset(chunked_df):
+    # chunked_df = chunked_df.drop(["Time"] ,axis = 1)
+    return chunked_df
+
+def feature_engineering(df, ab):
+    return df
+
+def data_viz(df):
+    return df, df
+
+def collect_dataset(Customer_Data, Towers_and_Complaints,
+                                       Network_Logs, CDRs, IMEI_info, Other_Data_Sources):
+    return Customer_Data
+
+def random_string_generator(size=10, chars=ascii_letters):
+    df={}
+    df["udmi"]="".join(random.choice(chars) for _ in range(size))
+    return pd.DataFrame(df,index=[0])

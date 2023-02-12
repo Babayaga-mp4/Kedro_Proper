@@ -1,0 +1,28 @@
+setup.py
+attri_demo/__init__.py
+attri_demo/__main__.py
+attri_demo/pipeline_registry.py
+attri_demo/settings.py
+attri_demo.egg-info/PKG-INFO
+attri_demo.egg-info/SOURCES.txt
+attri_demo.egg-info/dependency_links.txt
+attri_demo.egg-info/entry_points.txt
+attri_demo.egg-info/requires.txt
+attri_demo.egg-info/top_level.txt
+attri_demo/pipelines/__init__.py
+attri_demo/pipelines/Data Ingestion/__init__.py
+attri_demo/pipelines/Data Ingestion/nodes.py
+attri_demo/pipelines/Data Ingestion/pipeline.py
+attri_demo/pipelines/Deployment/__init__.py
+attri_demo/pipelines/Deployment/model_stuff.py
+attri_demo/pipelines/Deployment/nodes.py
+attri_demo/pipelines/Deployment/pipeline.py
+attri_demo/pipelines/Deployment/serving_node.py
+attri_demo/pipelines/Feature Engineering/__init__.py
+attri_demo/pipelines/Feature Engineering/nodes.py
+attri_demo/pipelines/Feature Engineering/pipeline.py
+attri_demo/pipelines/Training/__init__.py
+attri_demo/pipelines/Training/model_stuff.py
+attri_demo/pipelines/Training/nodes.py
+attri_demo/pipelines/Training/pipeline.py
+tests/pipelines/__init__.py

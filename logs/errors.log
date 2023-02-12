@@ -1,0 +1,100 @@
+2022-11-11 11:04:14,919 - kedro.pipeline.node - ERROR - Node 'model_service: serve_model([testx]) -> [served_predictions]' failed with error: 
+No such file or directory: '.\data\06_models\createdModel'
+2022-11-11 13:45:50,980 - kedro.pipeline.node - ERROR - Node 'logging: mlflow_logging([ml_model,error_metrics]) -> None' failed with error: 
+Model Registry features are not supported by the store with URI: 'file:///C:/Users/tsyrr/PycharmProjects/Demo/Censius_with_Kedro-dev/mlruns'. Stores with the following URI schemes are supported: ['databricks', 'http', 'https', 'postgresql', 'mysql', 'sqlite', 'mssql'].
+2022-11-11 14:06:08,782 - kedro.pipeline.node - ERROR - Node 'logging: mlflow_logging([ml_model,error_metrics]) -> None' failed with error: 
+Model Registry features are not supported by the store with URI: 'file:///C:/Users/tsyrr/PycharmProjects/Demo/Censius_with_Kedro-dev/mlruns'. Stores with the following URI schemes are supported: ['databricks', 'http', 'https', 'postgresql', 'mysql', 'sqlite', 'mssql'].
+2022-11-11 14:08:24,654 - kedro.pipeline.node - ERROR - Node 'logging: mlflow_logging([ml_model,error_metrics]) -> None' failed with error: 
+Model Registry features are not supported by the store with URI: 'file:///C:/Users/tsyrr/PycharmProjects/Demo/Censius_with_Kedro-dev/mlruns'. Stores with the following URI schemes are supported: ['databricks', 'http', 'https', 'postgresql', 'mysql', 'sqlite', 'mssql'].
+2022-11-11 14:15:16,849 - kedro.pipeline.node - ERROR - Node 'logging: mlflow_logging([ml_model,error_metrics]) -> None' failed with error: 
+Model Registry features are not supported by the store with URI: 'file:///C:/Users/tsyrr/PycharmProjects/Demo/Censius_with_Kedro-dev/mlruns'. Stores with the following URI schemes are supported: ['databricks', 'http', 'https', 'postgresql', 'mysql', 'sqlite', 'mssql'].
+2022-11-11 14:16:28,970 - kedro.pipeline.node - ERROR - Node 'model_service: serve_model([testx]) -> [served_predictions]' failed with error: 
+No such file or directory: '.\data\06_models\createdModel'
+2022-11-11 14:17:45,360 - kedro.pipeline.node - ERROR - Node 'logging: mlflow_logging([ml_model,error_metrics]) -> None' failed with error: 
+Model Registry features are not supported by the store with URI: 'file:///C:/Users/tsyrr/PycharmProjects/Demo/Censius_with_Kedro-dev/mlruns'. Stores with the following URI schemes are supported: ['databricks', 'http', 'https', 'postgresql', 'mysql', 'sqlite', 'mssql'].
+2022-11-11 14:53:34,531 - kedro.pipeline.node - ERROR - Node 'logging: mlflow_logging([ml_model,error_metrics]) -> None' failed with error: 
+Model Registry features are not supported by the store with URI: 'file:///C:/Users/tsyrr/PycharmProjects/Demo/Censius_with_Kedro-dev/mlruns'. Stores with the following URI schemes are supported: ['databricks', 'http', 'https', 'postgresql', 'mysql', 'sqlite', 'mssql'].
+2022-11-11 15:03:13,050 - kedro.pipeline.node - ERROR - Node 'logging: mlflow_logging([ml_model,error_metrics]) -> None' failed with error: 
+Model Registry features are not supported by the store with URI: 'file:///C:/Users/tsyrr/PycharmProjects/Demo/Censius_with_Kedro-dev/mlruns'. Stores with the following URI schemes are supported: ['databricks', 'http', 'https', 'postgresql', 'mysql', 'sqlite', 'mssql'].
+2022-11-11 15:05:04,150 - kedro.pipeline.node - ERROR - Node 'logging: mlflow_logging([ml_model,error_metrics]) -> None' failed with error: 
+Model Registry features are not supported by the store with URI: 'file:///C:/Users/tsyrr/PycharmProjects/Demo/Censius_with_Kedro-dev/mlruns'. Stores with the following URI schemes are supported: ['databricks', 'http', 'https', 'postgresql', 'mysql', 'sqlite', 'mssql'].
+2022-11-11 15:11:08,758 - kedro.pipeline.node - ERROR - Node 'logging: mlflow_logging([ml_model,error_metrics]) -> None' failed with error: 
+INVALID_PARAMETER_VALUE:  Model registry functionality is unavailable; got unsupported URI './mlruns' for model registry data storage. Supported URI schemes are: ['postgresql', 'mysql', 'sqlite', 'mssql']. See https://www.mlflow.org/docs/latest/tracking.html#storage for how to run an MLflow server against one of the supported backend storage locations.
+2022-11-11 15:16:59,949 - kedro.pipeline.node - ERROR - Node 'train_model: train([trainx,trainy]) -> [ml_model]' failed with error: 
+Path './data/06_models/createdModel' already exists and is not empty
+2022-11-11 15:28:29,289 - kedro.pipeline.node - ERROR - Node 'logging: mlflow_logging([ml_model,error_metrics]) -> None' failed with error: 
+INVALID_PARAMETER_VALUE:  Model registry functionality is unavailable; got unsupported URI './mlruns' for model registry data storage. Supported URI schemes are: ['postgresql', 'mysql', 'sqlite', 'mssql']. See https://www.mlflow.org/docs/latest/tracking.html#storage for how to run an MLflow server against one of the supported backend storage locations.
+2022-11-11 15:31:58,253 - kedro.pipeline.node - ERROR - Node 'logging: mlflow_logging([ml_model,error_metrics]) -> None' failed with error: 
+INVALID_PARAMETER_VALUE:  Model registry functionality is unavailable; got unsupported URI './mlruns' for model registry data storage. Supported URI schemes are: ['postgresql', 'mysql', 'sqlite', 'mssql']. See https://www.mlflow.org/docs/latest/tracking.html#storage for how to run an MLflow server against one of the supported backend storage locations.
+2022-11-11 15:41:00,003 - kedro.pipeline.node - ERROR - Node 'logging: mlflow_logging([ml_model,error_metrics]) -> None' failed with error: 
+INVALID_PARAMETER_VALUE:  Model registry functionality is unavailable; got unsupported URI './mlruns' for model registry data storage. Supported URI schemes are: ['postgresql', 'mysql', 'sqlite', 'mssql']. See https://www.mlflow.org/docs/latest/tracking.html#storage for how to run an MLflow server against one of the supported backend storage locations.
+2022-11-11 17:02:41,333 - kedro.pipeline.node - ERROR - Node 'train_model: train([trainx,trainy]) -> [ml_model]' failed with error: 
+[WinError 123] The filename, directory name, or volume label syntax is incorrect: 'sqlite:'
+2022-11-11 17:03:18,263 - kedro.pipeline.node - ERROR - Node 'train_model: train([trainx,trainy]) -> [ml_model]' failed with error: 
+[WinError 267] The directory name is invalid: 'mlflow.db'
+2022-11-11 19:57:05,278 - kedro.pipeline.node - ERROR - Node 'train_model: train([trainx,trainy]) -> [ml_model]' failed with error: 
+[WinError 123] The filename, directory name, or volume label syntax is incorrect: '.\\data\x06_models'
+2022-11-11 20:12:24,321 - kedro.pipeline.node - ERROR - Node 'train_model: train([trainx,trainy]) -> [ml_model]' failed with error: 
+Path '\data\06_models' already exists and is not empty
+2022-11-11 20:12:53,340 - kedro.pipeline.node - ERROR - Node 'train_model: train([trainx,trainy]) -> [ml_model]' failed with error: 
+Path '\data\06_models' already exists and is not empty
+2022-11-11 20:13:58,033 - kedro.pipeline.node - ERROR - Node 'train_model: train([trainx,trainy]) -> [ml_model]' failed with error: 
+Path '\data\06_models' already exists and is not empty
+2022-11-11 20:16:52,777 - kedro.pipeline.node - ERROR - Node 'train_model: train([trainx,trainy]) -> [ml_model]' failed with error: 
+[WinError 267] The directory name is invalid: './mlflow.db'
+2022-11-12 09:17:33,667 - kedro.pipeline.node - ERROR - Node 'train_model: train([trainx,trainy]) -> [ml_model]' failed with error: 
+Path 'Censius_with_Kedro-dev/mlflow.db' already exists and is not empty
+2022-11-12 10:17:04,979 - kedro.pipeline.node - ERROR - Node 'logging: mlflow_logging([ml_model,error_metrics]) -> None' failed with error: 
+get_run() missing 1 required positional argument: 'run_id'
+2022-11-12 10:35:42,758 - kedro.pipeline.node - ERROR - Node 'train_model: train([trainx,trainy]) -> [ml_model]' failed with error: 
+[WinError 123] The filename, directory name, or volume label syntax is incorrect: 'sqlite:'
+2022-11-12 10:37:07,992 - kedro.pipeline.node - ERROR - Node 'train_model: train([trainx,trainy]) -> [ml_model]' failed with error: 
+Cannot set a deleted experiment 'Hello World' as the active experiment. You can restore the experiment, or permanently delete the experiment to create a new one.
+2022-11-12 10:43:19,293 - kedro.pipeline.node - ERROR - Node 'train_model: train([trainx,trainy]) -> [ml_model]' failed with error: 
+[WinError 123] The filename, directory name, or volume label syntax is incorrect: 'sqlite:'
+2022-11-12 10:45:28,672 - kedro.pipeline.node - ERROR - Node 'train_model: train([trainx,trainy]) -> [ml_model]' failed with error: 
+[WinError 123] The filename, directory name, or volume label syntax is incorrect: 'sqlite:'
+2022-11-12 10:48:01,845 - kedro.pipeline.node - ERROR - Node 'train_model: train([trainx,trainy]) -> [ml_model]' failed with error: 
+[WinError 123] The filename, directory name, or volume label syntax is incorrect: 'sqlite:'
+2022-11-12 10:49:05,939 - kedro.pipeline.node - ERROR - Node 'train_model: train([trainx,trainy]) -> [ml_model]' failed with error: 
+[WinError 123] The filename, directory name, or volume label syntax is incorrect: 'sqlite:'
+2022-11-12 10:49:34,680 - kedro.pipeline.node - ERROR - Node 'train_model: train([trainx,trainy]) -> [ml_model]' failed with error: 
+[WinError 123] The filename, directory name, or volume label syntax is incorrect: 'sqlite:'
+2022-11-12 10:51:17,312 - kedro.pipeline.node - ERROR - Node 'train_model: train([trainx,trainy]) -> [ml_model]' failed with error: 
+[WinError 123] The filename, directory name, or volume label syntax is incorrect: 'sqlite:'
+2022-11-12 10:51:36,798 - kedro.pipeline.node - ERROR - Node 'train_model: train([trainx,trainy]) -> [ml_model]' failed with error: 
+[WinError 123] The filename, directory name, or volume label syntax is incorrect: 'sqlite:'
+2022-11-12 10:51:56,231 - kedro.pipeline.node - ERROR - Node 'train_model: train([trainx,trainy]) -> [ml_model]' failed with error: 
+[WinError 123] The filename, directory name, or volume label syntax is incorrect: 'sqlite:'
+2022-11-12 10:52:37,017 - kedro.pipeline.node - ERROR - Node 'train_model: train([trainx,trainy]) -> [ml_model]' failed with error: 
+[WinError 123] The filename, directory name, or volume label syntax is incorrect: 'sqlite:'
+2022-11-12 10:53:26,010 - kedro.pipeline.node - ERROR - Node 'train_model: train([trainx,trainy]) -> [ml_model]' failed with error: 
+[WinError 123] The filename, directory name, or volume label syntax is incorrect: 'sqlite:'
+2022-11-12 11:08:44,173 - kedro.pipeline.node - ERROR - Node 'logging: mlflow_logging([ml_model,error_metrics]) -> None' failed with error: 
+name 'model_uri' is not defined
+2022-11-12 11:09:16,884 - kedro.pipeline.node - ERROR - Node 'logging: mlflow_logging([ml_model,error_metrics]) -> None' failed with error: 
+Model Registry features are not supported by the store with URI: 'file:///C:/Users/tsyrr/PycharmProjects/Demo/Censius_with_Kedro-dev/mlruns'. Stores with the following URI schemes are supported: ['databricks', 'http', 'https', 'postgresql', 'mysql', 'sqlite', 'mssql'].
+2022-11-12 11:15:32,716 - kedro.pipeline.node - ERROR - Node 'train_model: train([trainx,trainy]) -> [ml_model]' failed with error: 
+[WinError 123] The filename, directory name, or volume label syntax is incorrect: 'sqlite:'
+2022-11-12 11:17:24,553 - kedro.pipeline.node - ERROR - Node 'train_model: train([trainx,trainy]) -> [ml_model]' failed with error: 
+[WinError 267] The directory name is invalid: 'db/mlflow.db'
+2022-11-12 11:17:57,262 - kedro.pipeline.node - ERROR - Node 'train_model: train([trainx,trainy]) -> [ml_model]' failed with error: 
+Path 'db/' already exists and is not empty
+2022-11-12 11:38:30,264 - kedro.pipeline.node - ERROR - Node 'logging: mlflow_logging([ml_model,error_metrics]) -> None' failed with error: 
+Model Registry features are not supported by the store with URI: 'file:///C:/Users/tsyrr/PycharmProjects/Demo/Censius_with_Kedro-dev/mlruns'. Stores with the following URI schemes are supported: ['databricks', 'http', 'https', 'postgresql', 'mysql', 'sqlite', 'mssql'].
+2022-11-12 11:48:39,162 - kedro.pipeline.node - ERROR - Node 'logging: mlflow_logging([ml_model,error_metrics]) -> None' failed with error: 
+Model Registry features are not supported by the store with URI: 'file:///C:/Users/tsyrr/PycharmProjects/Demo/Censius_with_Kedro-dev/mlruns'. Stores with the following URI schemes are supported: ['databricks', 'http', 'https', 'postgresql', 'mysql', 'sqlite', 'mssql'].
+2022-11-12 11:49:56,862 - kedro.pipeline.node - ERROR - Node 'logging: mlflow_logging([ml_model,error_metrics]) -> None' failed with error: 
+Run with id=02af6fcbc5854230a900ea5b85171781 not found
+2022-11-12 11:51:12,156 - kedro.pipeline.node - ERROR - Node 'logging: mlflow_logging([ml_model,error_metrics]) -> None' failed with error: 
+Model Registry features are not supported by the store with URI: 'file:///C:/Users/tsyrr/PycharmProjects/Demo/Censius_with_Kedro-dev/mlruns'. Stores with the following URI schemes are supported: ['databricks', 'http', 'https', 'postgresql', 'mysql', 'sqlite', 'mssql'].
+2022-11-12 11:51:39,637 - kedro.pipeline.node - ERROR - Node 'logging: mlflow_logging([ml_model,error_metrics]) -> None' failed with error: 
+Model Registry features are not supported by the store with URI: 'file:///C:/Users/tsyrr/PycharmProjects/Demo/Censius_with_Kedro-dev/mlruns'. Stores with the following URI schemes are supported: ['databricks', 'http', 'https', 'postgresql', 'mysql', 'sqlite', 'mssql'].
+2023-02-06 21:33:00,508 - kedro.pipeline.node - ERROR - Node 'Logging: mlflow_logging([Trained_Model,Hyperparameters,Performance_of_the_Model]) -> [Deployment.Logged_Model]' failed with error: 
+'dict' object has no attribute 'iloc'
+2023-02-06 21:36:20,181 - kedro.pipeline.node - ERROR - Node 'Deployment: serve_model([Deployment.Logged_Model]) -> [Prediction]' failed with error: 
+Expected 2D array, got scalar array instead:
+array=1,2,3.
+Reshape your data either using array.reshape(-1, 1) if your data has a single feature or array.reshape(1, -1) if it contains a single sample.
+2023-02-06 21:40:24,276 - kedro.pipeline.node - ERROR - Node 'Logging: mlflow_logging([Trained_Model,Hyperparameters,Performance_of_the_Model]) -> [Deployment.Logged_Model]' failed with error: 
+Run with UUID ce5034e92fb84b0da3eba980728977d2 is already active. To start a new run, first end the current run with mlflow.end_run(). To start a nested run, call start_run with nested=True

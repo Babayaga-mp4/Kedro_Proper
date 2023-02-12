@@ -1,0 +1,3 @@
+{
+  "LGBMClassifier_score_X_test": "LGBMClassifier.score(X=X_test, y=y_test)"
+}

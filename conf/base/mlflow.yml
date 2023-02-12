@@ -1,0 +1,12 @@
+server:
+  mlflow_tracking_uri: sqlite:///mlflow.db
+
+#server:
+#  mlflow_registry_uri: sqlite:///mlflow.db
+
+#tracking:
+#  run:
+#    id: null # if `id` is None, a new run will be created
+#    name: "The Run" # if `name` is None, pipeline name will be used for the run name
+#    nested: False  # # if `nested` is False, you won't be able to launch sub-runs inside your nodes
+

@@ -1,0 +1,3 @@
+{
+  "MLPClassifier_score_X_test": "MLPClassifier.score(X=X_test, y=y_test)"
+}

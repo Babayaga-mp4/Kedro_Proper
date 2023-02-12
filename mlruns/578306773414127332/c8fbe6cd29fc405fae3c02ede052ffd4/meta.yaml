@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/tsyrr/PycharmProjects/Churn_Prediction/mlruns/578306773414127332/c8fbe6cd29fc405fae3c02ede052ffd4/artifacts
+end_time: 1675695142987
+entry_point_name: ''
+experiment_id: '578306773414127332'
+lifecycle_stage: active
+run_id: c8fbe6cd29fc405fae3c02ede052ffd4
+run_name: sneaky-quail-748
+run_uuid: c8fbe6cd29fc405fae3c02ede052ffd4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1675695136297
+status: 3
+tags: []
+user_id: tsyrr

@@ -1,0 +1,2 @@
+[console_scripts]
+attri-demo = attri_demo.__main__:main
