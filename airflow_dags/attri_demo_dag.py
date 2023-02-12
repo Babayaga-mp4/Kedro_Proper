@@ -84,20 +84,20 @@ with DAG(
         env=env,
     )
 
-    tasks["feature-engineering-sna-feature-engineering"] = KedroOperator(
-        task_id="feature-engineering-sna-feature-engineering",
+    tasks["feature-engineering-social-network-analysis"] = KedroOperator(
+        task_id="feature-engineering-social-network-analysis",
         package_name=package_name,
         pipeline_name=pipeline_name,
-        node_name="Feature Engineering.SNA_Feature_Engineering",
+        node_name="Feature Engineering.Social_Network_Analysis",
         project_path=project_path,
         env=env,
     )
 
-    tasks["feature-engineering-statistical-feature-engineering"] = KedroOperator(
-        task_id="feature-engineering-statistical-feature-engineering",
+    tasks["feature-engineering-statistical-analysis"] = KedroOperator(
+        task_id="feature-engineering-statistical-analysis",
         package_name=package_name,
         pipeline_name=pipeline_name,
-        node_name="Feature Engineering.Statistical_Feature_Engineering",
+        node_name="Feature Engineering.Statistical_Analysis",
         project_path=project_path,
         env=env,
     )
@@ -176,36 +176,36 @@ with DAG(
 
 
 
-    tasks["feature-engineering-feature-selection"] >> tasks["feature-engineering-feature-transformation"]
-
-    tasks["feature-engineering-sna-feature-engineering"] >> tasks["feature-engineering-feature-transformation"]
-
-    tasks["feature-engineering-sna-feature-engineering"] >> tasks["feature-engineering-feature-selection"]
-
-    tasks["feature-engineering-statistical-feature-engineering"] >> tasks["feature-engineering-feature-transformation"]
-
-    tasks["feature-engineering-statistical-feature-engineering"] >> tasks["feature-engineering-feature-selection"]
-
-    tasks["data-ingestion-data-ingestion"] >> tasks["data-ingestion-filtering"]
-
-    tasks["data-ingestion-filtering"] >> tasks["feature-engineering-statistical-feature-engineering"]
-
-    tasks["data-ingestion-filtering"] >> tasks["feature-engineering-sna-feature-engineering"]
-
-    tasks["model-training-train-test-split"] >> tasks["model-training-training-the-model"]
-
-    tasks["model-training-train-test-split"] >> tasks["model-training-evaluation-of-the-model"]
-
-    tasks["model-training-train-test-split"] >> tasks["model-training-predictions-from-the-model"]
-
-    tasks["feature-engineering-feature-transformation"] >> tasks["model-training-train-test-split"]
-
     tasks["model-training-evaluation-of-the-model"] >> tasks["deployment-logging"]
 
     tasks["model-training-training-the-model"] >> tasks["deployment-logging"]
 
     tasks["model-training-training-the-model"] >> tasks["model-training-predictions-from-the-model"]
 
-    tasks["model-training-predictions-from-the-model"] >> tasks["model-training-evaluation-of-the-model"]
+    tasks["feature-engineering-feature-selection"] >> tasks["feature-engineering-feature-transformation"]
+
+    tasks["feature-engineering-statistical-analysis"] >> tasks["feature-engineering-feature-transformation"]
+
+    tasks["feature-engineering-statistical-analysis"] >> tasks["feature-engineering-feature-selection"]
+
+    tasks["feature-engineering-social-network-analysis"] >> tasks["feature-engineering-feature-transformation"]
+
+    tasks["feature-engineering-social-network-analysis"] >> tasks["feature-engineering-feature-selection"]
+
+    tasks["model-training-train-test-split"] >> tasks["model-training-predictions-from-the-model"]
+
+    tasks["model-training-train-test-split"] >> tasks["model-training-training-the-model"]
+
+    tasks["model-training-train-test-split"] >> tasks["model-training-evaluation-of-the-model"]
 
     tasks["deployment-logging"] >> tasks["deployment-deployment"]
+
+    tasks["data-ingestion-filtering"] >> tasks["feature-engineering-social-network-analysis"]
+
+    tasks["data-ingestion-filtering"] >> tasks["feature-engineering-statistical-analysis"]
+
+    tasks["model-training-predictions-from-the-model"] >> tasks["model-training-evaluation-of-the-model"]
+
+    tasks["feature-engineering-feature-transformation"] >> tasks["model-training-train-test-split"]
+
+    tasks["data-ingestion-data-ingestion"] >> tasks["data-ingestion-filtering"]
