@@ -10,26 +10,25 @@ Network_Logs:
     layer: Data Ingestion
 
 Customer_Data:
-
-  type: pandas.CSVDataSet
-  filepath: data/01_raw/train.csv
-  layer: Data Ingestion
+    type: pandas.CSVDataSet
+    filepath: data/01_raw/train.csv
+    layer: Data Ingestion
 
 
 Other_Data_Sources:
-  type: pandas.CSVDataSet
-  filepath: data/01_raw/train.csv
-  layer: Data Ingestion
+    type: pandas.CSVDataSet
+    filepath: data/01_raw/train.csv
+    layer: Data Ingestion
 
 Towers_and_Complaints:
-  type: pandas.CSVDataSet
-  filepath: data/01_raw/train.csv
-  layer: Data Ingestion
+    type: pandas.CSVDataSet
+    filepath: data/01_raw/train.csv
+    layer: Data Ingestion
 
 CDRs:
-  type: pandas.CSVDataSet
-  filepath: data/01_raw/train.csv
-  layer: Data Ingestion
+    type: pandas.CSVDataSet
+    filepath: data/01_raw/train.csv
+    layer: Data Ingestion
 
 IMEI_info:
     type: pandas.CSVDataSet
