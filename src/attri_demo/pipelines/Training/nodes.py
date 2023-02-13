@@ -2,9 +2,6 @@ from string import ascii_letters
 import random
 import pandas as pd
 
-def load_dataset(chunked_df):
-    chunked_df = chunked_df.drop(["Time"] ,axis = 1)
-    return chunked_df
 
 def feature_engineering(df, ab):
     return df

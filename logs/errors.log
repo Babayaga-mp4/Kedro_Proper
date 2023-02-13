@@ -98,3 +98,5 @@ array=1,2,3.
 Reshape your data either using array.reshape(-1, 1) if your data has a single feature or array.reshape(1, -1) if it contains a single sample.
 2023-02-06 21:40:24,276 - kedro.pipeline.node - ERROR - Node 'Logging: mlflow_logging([Trained_Model,Hyperparameters,Performance_of_the_Model]) -> [Deployment.Logged_Model]' failed with error: 
 Run with UUID ce5034e92fb84b0da3eba980728977d2 is already active. To start a new run, first end the current run with mlflow.end_run(). To start a nested run, call start_run with nested=True
+2023-02-13 12:29:08,520 - kedro.pipeline.node - ERROR - Node 'Training_The_Model: train([Model_Training.X_Train,Model_Training.y_Train,Hyperparameters]) -> [Trained_Model,confusion_matrix,precision_recall_curve,roc_curve]' failed with error: 
+float() argument must be a string or a number, not 'AxesImage'

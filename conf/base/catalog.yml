@@ -35,7 +35,7 @@ IMEI_info:
     filepath: data/01_raw/train.csv
     layer: Data Ingestion
 
-Raw_Data:
+Data Ingestion.Raw_Data:
     type: pandas.CSVDataSet
     filepath: data/01_raw/train.csv
     layer: Data Ingestion
@@ -50,17 +50,17 @@ Pre-Processed Data:
     filepath: data/03_primary/train.csv
     layer: Data Pre Processing
 
-Statistical_Features:
+Feature Engineering.Statistical_Features:
     type: pandas.CSVDataSet
     filepath: data/04_primary/train.csv
     layer: Feature Engineering
 
-SNA_Features:
+Feature Engineering.SNA_Features:
     type: pandas.CSVDataSet
     filepath: data/04_primary/train.csv
     layer: Feature Engineering
 
-selected_features:
+Feature Engineering.selected_features:
     type: pandas.CSVDataSet
     filepath: data/04_primary/train.csv
     layer: Feature Engineering
@@ -85,24 +85,24 @@ dataset:
 #    filepath: data/02_intermediate/udmi.csv
 #    layer: intermediate
 
-X_Train:
+Model_Training.X_Train:
     type: pandas.CSVDataSet
-    filepath: data/05_model_input/train.csv
+    filepath: data/05_model_input/X_Train.csv
     layer: Modeling
 
-y_Train:
+Model_Training.y_Train:
     type: pandas.CSVDataSet
-    filepath: data/05_model_input/train.csv
+    filepath: data/05_model_input/y_Train.csv
     layer: Modeling
 
-X_Test:
+Model_Training.X_Test:
     type: pandas.CSVDataSet
-    filepath: data/05_model_input/train.csv
+    filepath: data/05_model_input/X_Test.csv
     layer: Modeling
 
-y_Test:
+Model_Training.y_Test:
     type: pandas.CSVDataSet
-    filepath: data/05_model_input/train.csv
+    filepath: data/05_model_input/y_Test.csv
     layer: Modeling
 
 Hyperparameters:
@@ -123,12 +123,12 @@ Performance_of_the_Model:
     filepath: data/08_reporting/train.csv
     layer: Modeling
 
-Prediction:
+Model_Training.Predictions:
   type: pandas.CSVDataSet
   filepath: data/07_model_output/predictions.csv
   layer: Logging
 
-served_predictions:
+Prediction:
   type: pandas.CSVDataSet
   filepath: data/07_model_output/served_predictions.csv
   layer: Logging
