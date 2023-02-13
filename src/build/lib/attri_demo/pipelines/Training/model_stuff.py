@@ -12,6 +12,9 @@ from imblearn.over_sampling import SMOTE
 from sklearn.preprocessing import MinMaxScaler
 import mlflow
 import mlflow.sklearn
+import matplotlib.image as mpllimg
+import matplotlib.pyplot as plt
+from sklearn.metrics import ConfusionMatrixDisplay, PrecisionRecallDisplay, RocCurveDisplay
 from sklearn.svm import SVC
 import xgboost as xgb
 from sqlalchemy import create_engine
@@ -45,6 +48,8 @@ def train_test_split_the_data(data):
     X_train.columns = cols
     X_test = pd.DataFrame(mm.transform(X_test))
     X_test.columns = cols
+    y_train = pd.DataFrame(y_train)
+    y_test = pd.DataFrame(y_test)
 
     return X_train, y_train, X_test, y_test
 
@@ -58,11 +63,11 @@ def train(X_train, y_train, Hyperparameters):
     mlflow.set_registry_uri(
         "sqlite:///mlflow.db")
     # mlflow.set_tracking_uri('sqlite:///mlflow.db') # Set in mlflow.yml
-    confusion_matrix ,precision_recall_curve ,roc_curve = [1,1,1] # dummy
-    return lr,confusion_matrix, precision_recall_curve, roc_curve
+
+    return lr
 
 
-def eval_metrics(actual, raw_preds) -> pd.DataFrame:
+def eval_metrics(actual, raw_preds):
     pred = raw_preds.to_numpy()
     rmse = np.sqrt(mean_squared_error(actual, pred))
     mae = mean_absolute_error(actual, pred)
@@ -85,8 +90,11 @@ def eval_metrics(actual, raw_preds) -> pd.DataFrame:
     df['recall'] = recall
     df['lloss'] = lloss
     df['zoloss'] = zoloss
+    confusion_matrix = ConfusionMatrixDisplay.from_predictions(actual, raw_preds).figure_
+    precision_recall_curve = PrecisionRecallDisplay.from_predictions(actual, raw_preds).figure_
+    roc_curve = RocCurveDisplay.from_predictions(actual, raw_preds).figure_
 
-    return pd.DataFrame(df,index=[0])
+    return pd.DataFrame(df,index=[0]),confusion_matrix, precision_recall_curve, roc_curve
 
 def prediction(lr, X_test):
     predicted_qualities = lr.predict(X_test)

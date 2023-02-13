@@ -7,5 +7,5 @@ def serve_model(model):
     # alldata = input('Data for prediction:')
     # predictions=model.predict(alldata)
     # alldata["Predictions"]=predictions
-    # return pd.DataFrame(alldata)
-    return "In development"
+    return pd.DataFrame([1])
+    # return pd.DataFrame("In development")
