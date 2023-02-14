@@ -66,11 +66,11 @@ with DAG(
 
     tasks = {}
 
-    tasks["data-ingestion-data-ingestion"] = KedroOperator(
-        task_id="data-ingestion-data-ingestion",
+    tasks["data-ingestion-collect-dataset-customer-data-towers-and-complaints-network-logs-cdrs-imei-info-other-data-sources-data-ingestion-raw-data"] = KedroOperator(
+        task_id="data-ingestion-collect-dataset-customer-data-towers-and-complaints-network-logs-cdrs-imei-info-other-data-sources-data-ingestion-raw-data",
         package_name=package_name,
         pipeline_name=pipeline_name,
-        node_name="Data Ingestion.Data_Ingestion",
+        node_name="Data Ingestion.collect_dataset([Customer_Data,Towers_and_Complaints,Network_Logs,CDRs,IMEI_info,Other_Data_Sources]) -> [Data Ingestion.Raw_Data]",
         project_path=project_path,
         env=env,
     )
@@ -176,36 +176,36 @@ with DAG(
 
 
 
-    tasks["model-training-evaluation-of-the-model"] >> tasks["deployment-logging"]
-
-    tasks["model-training-training-the-model"] >> tasks["deployment-logging"]
-
-    tasks["model-training-training-the-model"] >> tasks["model-training-predictions-from-the-model"]
-
-    tasks["feature-engineering-feature-selection"] >> tasks["feature-engineering-feature-transformation"]
-
-    tasks["feature-engineering-statistical-analysis"] >> tasks["feature-engineering-feature-transformation"]
-
-    tasks["feature-engineering-statistical-analysis"] >> tasks["feature-engineering-feature-selection"]
-
-    tasks["feature-engineering-social-network-analysis"] >> tasks["feature-engineering-feature-transformation"]
-
-    tasks["feature-engineering-social-network-analysis"] >> tasks["feature-engineering-feature-selection"]
+    tasks["model-training-train-test-split"] >> tasks["model-training-training-the-model"]
 
     tasks["model-training-train-test-split"] >> tasks["model-training-predictions-from-the-model"]
 
-    tasks["model-training-train-test-split"] >> tasks["model-training-training-the-model"]
-
     tasks["model-training-train-test-split"] >> tasks["model-training-evaluation-of-the-model"]
-
-    tasks["deployment-logging"] >> tasks["deployment-deployment"]
 
     tasks["data-ingestion-filtering"] >> tasks["feature-engineering-social-network-analysis"]
 
     tasks["data-ingestion-filtering"] >> tasks["feature-engineering-statistical-analysis"]
 
+    tasks["model-training-training-the-model"] >> tasks["model-training-predictions-from-the-model"]
+
+    tasks["model-training-training-the-model"] >> tasks["deployment-logging"]
+
     tasks["model-training-predictions-from-the-model"] >> tasks["model-training-evaluation-of-the-model"]
+
+    tasks["feature-engineering-statistical-analysis"] >> tasks["feature-engineering-feature-selection"]
+
+    tasks["feature-engineering-statistical-analysis"] >> tasks["feature-engineering-feature-transformation"]
+
+    tasks["feature-engineering-social-network-analysis"] >> tasks["feature-engineering-feature-selection"]
+
+    tasks["feature-engineering-social-network-analysis"] >> tasks["feature-engineering-feature-transformation"]
+
+    tasks["data-ingestion-collect-dataset-customer-data-towers-and-complaints-network-logs-cdrs-imei-info-other-data-sources-data-ingestion-raw-data"] >> tasks["data-ingestion-filtering"]
 
     tasks["feature-engineering-feature-transformation"] >> tasks["model-training-train-test-split"]
 
-    tasks["data-ingestion-data-ingestion"] >> tasks["data-ingestion-filtering"]
+    tasks["feature-engineering-feature-selection"] >> tasks["feature-engineering-feature-transformation"]
+
+    tasks["model-training-evaluation-of-the-model"] >> tasks["deployment-logging"]
+
+    tasks["deployment-logging"] >> tasks["deployment-deployment"]
